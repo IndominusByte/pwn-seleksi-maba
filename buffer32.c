@@ -37,7 +37,7 @@ int main()
   if(strlen(c) > 20){
     printf("karakter gak boleh lebih dari 20");
   } else{ 
-    if(b == 0x666c6167) not_even_called();
+    if(b == 0x67616c66) not_even_called();
     else print(c);
   }
   return 0;
