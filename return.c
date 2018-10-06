@@ -62,7 +62,7 @@ int main()
     printf("isi wallet : %d ruby\n",wallet);
     break;
     case '6' :
-    printf("makasih udah berkunjung :)");
+    printf("makasih udah berkunjung :)\n");
     exit(0);
     break;
     default :

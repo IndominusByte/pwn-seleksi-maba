@@ -2,10 +2,6 @@
 #include <string.h>
 #include <limits.h>
 
-void print(char c[]){
-  printf("isi diary kamu : %s\n",c);
-}
-
 void not_even_called(){
   puts("\nWelcome Garuda Muda\n");
   system("/bin/sh");
@@ -38,7 +34,7 @@ int main()
     printf("karakter gak boleh lebih dari 20");
   } else{ 
     if(b == 0x67616c66) not_even_called();
-    else print(c);
+    else printf("isi diary kamu : %s\n",c);
   }
   return 0;
 }
