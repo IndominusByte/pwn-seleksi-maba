@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int wallet = 18;
 char burung[8];
@@ -10,14 +11,12 @@ void secret_message(){
 }
 void buy_flag(){
   if(wallet < 999999999999) printf("kamu terlalu lemah dude :)\n");
+    else secret_message();
 }
 void jual_burung(){
     char buffer[64];
-    getchar();
     printf("burung apa yang kamu mau jual ?\n");
-    printf(">>");
-    gets(&buffer);
-    printf("yang kamu jual : %s\n",buffer);
+    read(0,buffer,128);
 }
 void menu(){
   printf("+--------------------------------+\n");
