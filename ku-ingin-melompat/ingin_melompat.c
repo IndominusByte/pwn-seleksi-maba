@@ -1,8 +1,8 @@
+//gcc -g -no-pie -fno-stack-protector -fno-pic -fno-builtin -mpreferred-stack-boundary=2 -m32 ingin_melompat.c -o ingin_melompat     
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-
 
 int wallet = 18;
 char burung[8];
@@ -10,25 +10,21 @@ char burung[8];
 void secret_message(){
   system("/bin/sh");
 }
+
+void init(){
+setvbuf(stdin, NULL, _IONBF, 0);
+setvbuf(stdout, NULL, _IONBF, 0);
+setvbuf(stderr, NULL, _IONBF, 0);
+}
+
 void buy_flag(){
   if(wallet < 999999999999) printf("kamu terlalu lemah dude :)\n");
     else secret_message();
 }
 void jual_burung(){
     char buffer[64];
-    getchar();
     printf("burung apa yang kamu mau jual ?\n");
-    fgets(buffer, sizeof(buffer), stdin);
-    printf("yang kamu jual : ");
-    printf(buffer);
-    if(strcmp(buffer,"garuda") == 1 && strcmp(burung,"garuda") == 0){
-      printf("burung berhasil di jual\n");
-      wallet = wallet + 10;
-      memset(&burung[0], 0, sizeof(burung));
-    } else{ 
-      puts("not found !\n"); 
-      exit(0);
-    }
+    read(0,buffer,128);
 }
 void menu(){
   printf("+--------------------------------+\n");
@@ -46,6 +42,7 @@ int main()
 {
   while(1){
   char pilihan;
+  init();
   menu();
   printf(">>");
   fflush(stdout);
