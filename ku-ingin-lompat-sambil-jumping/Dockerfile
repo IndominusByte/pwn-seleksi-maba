@@ -19,7 +19,7 @@ RUN echo "ksl:sebuahrahasiamas" | chpasswd
 ADD chall/. /chall
 WORKDIR /chall
 
-RUN echo 'KSL{Welc0me_t0_PWn_W0rLd!1!}'  > /chall/flag.txt # ubah isi flagnya
+RUN echo 'KSL{PWn_W0rLd!1!}'  > /chall/flag.txt # ubah isi flagnya
 
 # Secure ENV
 
