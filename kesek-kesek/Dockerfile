@@ -19,7 +19,7 @@ RUN echo "ksl:sebuahrahasiamas" | chpasswd
 ADD chall/. /chall
 WORKDIR /chall
 
-RUN echo 'KSL{Welc0me_t0_PWn_W0rLd!1!}'  > /chall/flag.txt # ubah isi flagnya
+RUN echo 'KSL{Upps_Yo0_Th3_R3AA#$L_FuCkB0y}'  > /chall/flag.txt # ubah isi flagnya
 
 # Secure ENV
 
@@ -28,11 +28,11 @@ RUN chmod 700 /tmp /var/tmp /usr/bin/* /bin/* /dev/shm
 RUN chmod 755 /usr/bin/env /bin/dash /bin/bash /bin/sh /bin/nc /bin/cat /usr/bin/curl /usr/bin/groups /usr/bin/id /bin/ls /usr/bin/python
 
 
-RUN chown root:ksl /chall/ingin_melompat2 # ubah nama file
-RUN chmod 775 /chall/ingin_melompat2 # ubah nama file
+RUN chown root:ksl /chall/membuat # ubah nama file
+RUN chmod 775 /chall/membuat # ubah nama file
 
 # Run Service
 
-RUN echo '#!/bin/bash'"\n(socat TCP-LISTEN:7000,reuseaddr,fork EXEC:"/chall/ingin_melompat2,su=nobody")" > /var/tmp/.start.sh && chmod +x /var/tmp/.start.sh
+RUN echo '#!/bin/bash'"\n(socat TCP-LISTEN:7000,reuseaddr,fork EXEC:"/chall/membuat,su=nobody")" > /var/tmp/.start.sh && chmod +x /var/tmp/.start.sh
 
 CMD ["/var/tmp/.start.sh"]
